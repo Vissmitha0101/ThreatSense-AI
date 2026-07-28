@@ -1,0 +1,10 @@
+requests==2.31.0 
+python-dotenv==1.0.0 
+openai==1.0.0 
+watchdog==3.0.0 
+imaplib2==3.6 
+pandas==2.1.0 
+matplotlib==3.7.0 
+sqlalchemy==2.0.23 
+flask==3.0.0 
+streamlit==1.28.0 
