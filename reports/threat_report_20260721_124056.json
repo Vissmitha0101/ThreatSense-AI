@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-07-21T12:40:56.244706",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "evil-domain.xyz",
+      "google-secure-login.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 1,
+          "suspicious": 0,
+          "harmless": 54,
+          "undetected": 36,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 48,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 13,
+          "total_reports": 3,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Response: Based on the threat finding information provided, we can identify the following levels of threat:\n\n1. Critical - The level of threat is high due to the nature and scope of the attack or incident. This indicates a significant risk of damage or disruption to critical infrastructure or sensitive data.\n\n2. High - The level of threat is moderate, with an increased possibility of damaging or compromising sensitive information or systems. However, the likelihood of causing harm is low.\n\n3. Medium - This level of threat has some potential for significant impact on critical infrastructure and/or sensitive data. Nevertheless, the likelihood of causing damage or disruption is moderate to high.\n\n4. Low - The level of threat is relatively low, with minimal potential for significant harm to critical infrastructure or sensitive information. However, there is a risk of inconvenience or inconsequential impact.\n\nIn terms of recommended actions based on the given threat finding information, we can advise against taking any immediate steps as the attack could still be ongoing. Rather, it would be best to focus on mitigating the effects of the incident while also monitoring for further developments.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

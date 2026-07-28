@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-07-10T08:52:37.536297",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 54,
+          "undetected": 36,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/IPv4/5.5.5.5/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "abuseipdb": {
+          "abuse_score": 8,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/domain/google-secure-login.xyz/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Based on the threat finding provided, the threat level for these threat finding is \"CRITICAL\". The Brief Summary includes the following details:\n\n1. Total IOCs: 4\n2. Malicious: 0\n3. IPs: 1\n4. Domain(s): 2\n5. Hash(es): 1\n\nGiven the text, \"Total IOCs\" and \"Malicious\" refer to how many unique or non-unique threat intelligence (TI) objects are shared across the threat finding, while \"IPs\" refers to IP addresses identified in TIs, and \"Domain(s)\" refers to domains listed in TIs. \"Hashes\" refers to hash values associated with TI objects. The text also mentions that 1 IOC is malicious by definition, while \"brief summary\" includes the following details:\n\n- Total IOCs: 4\n- Malicious: 0 (malicious meaning \"defined as attacker tactics\")\n- IPs: 1 (unique or non-unique means one IP can be used for multiple threat intel sources)\n- Domain(s): 2 (unique, indicating one domain was identified in multiple threat intelligence sources)\n- Hashes: 1 (unique hash value associated with malicious TI object)\n\nAll together, these details indicate that the threat finding contains a total of 4 IOCs, none of which are considered \"malicious\" by definition. The brief summary also states that all TIs share unique or non-unique malicious TI objects but no hashes that represent any type of attacker tactics or techniques.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

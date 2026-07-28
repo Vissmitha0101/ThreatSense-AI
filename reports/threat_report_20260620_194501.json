@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-06-20T19:45:01.816549",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "evil-domain.xyz",
+      "google-secure-login.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Response: The above-provided threat finding is accurate and represents a \"Critical\" threat level. This means that the identified threat poses a significant risk to sensitive information, assets or data on this organization's network.\n\nIn regards to recommeneded actions, it is recommended to immediately implement countermeasures to mitigate any potential attacks or compromises to the organization's systems. These may include enhancing security measures such as securing systems and applications, improving access controls, implementing two-factor authentication, and regularly updating software and configurations. It is also essential to conduct regular risk assessments and implement countermeasures accordingly.\n\nOverall, this finding demonstrates a high potential threat level that requires immediate attention and mitigation measures in order to prevent further damage to the organization's networks.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

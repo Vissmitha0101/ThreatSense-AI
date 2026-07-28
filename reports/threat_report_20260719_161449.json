@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-07-19T16:14:49.401607",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 1,
+          "suspicious": 0,
+          "harmless": 54,
+          "undetected": 36,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 48,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 13,
+          "total_reports": 3,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Here is a revised version of the threat finding with additional data:\n\nTotal IOCs: 4\nMalicious: 1\nIPs: 1\nDomains: 2\nHashes: 1\n\nGiven:\n- Total IOCs: 4\n- Malicious: 1 (hash: 32)\n- IPs: 1 (domain: example.com)\n- Domains: 2\n- Hashes: 1 (algorithm: md5, size: 32)\n\nFormat exactly like this:\nTHREAT LEVELLOWESS: [your answer]\nSUMMARY: [your answer]\nRECOMMENDATIONS: [your answer]",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

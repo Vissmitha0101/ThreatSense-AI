@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-14T08:55:26.671956",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 1,
+          "suspicious": 1,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 7,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Response to \"Threat Finding\":\n\nAnalysis:\n1. Total IOCs: 4\n- Malicious: 1\n- IPs: 1\n- Domain(s): 2\n\nGrades: [CRITICAL/HIGH/MEDIUM/LOW]\n\nBrief summary: This threat is considered a high threat level due to the presence of malicious and IPs. The organization should consider strengthening their defenses and implementing additional measures to mitigate any potential risks associated with these IOCs. Recomicements: The following recommendations can be made to mitigate the identified threats:\n- Implement advanced security measures such as intrusion detection systems, firewall configurations, and network segmentation. - Regularly update firewalls, anti-malware software, and other systems with the latest patches and updates. - Monitor system activity closely for any unusual or suspicious behavior, and investigate them promptly. - Implement strong passwords and access controls for all sensitive data and system resources. - Conduct regular vulnerability assessments and patch upgrades for critical assets and applications. - Train employees on best practices for securing personal devices and communicating with remote team members.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

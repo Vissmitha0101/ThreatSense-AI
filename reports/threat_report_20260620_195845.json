@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-06-20T19:58:45.561334",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Analyzed according to the threat finding provided by the company.\n\nTotal IOCs: 4\nMalicious: 0\nIPs: 1\nDomains: 2\nHashes: 1\n\nThreat Level: CRITICAL\n\nBrief Summary (2 sentences): The company reports that a critical threat was identified during the analysis. A malware or other dangerous software was detected, and there is a high risk of damage to the targeted system if not eliminated immediately. Recommendations: The company advises the affected organization to take immediate action and implement countermeasures such as removal of any infected files or software, update operating systems and applications, and perform regular virus scans.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

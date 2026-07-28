@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-06-20T19:06:48.854260",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        },
+        "abuseipdb": {
+          "error": "AbuseIPDB API key not configured"
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Analysis:\n\n1. Total IOCs (Information Objects Collected): There are no total IOCs found in the threat report's data, indicating a critical or high level of threat. The information object collected is primarily malicious and indicates that this threat is a significant one.\n\n2. Malicious: The number of unique malicious IP addresses (IPs) found in the threat report is zero. This is a low-level threat and indicates a minimal risk to the targeted organization.\n\n3. IPs: The information in the threat report suggests that there are no IPs associated with this threat, indicating it is not active or significant in nature. The only possible malicious IP addresses found were not relevant to the organization being targeted.\n\n4. Domain: The domain associated with this threat has been identified as a legitimate domain used for online marketing purposes. No indications of malicious activity have been found, indicating that it is a harmless or low-level threat.\n\n5. Hashes: While the information in the threat report indicates no specific hashes were involved, the total number of hashes analyzed (1) represents a medium-level threat and suggests a potential malicious attack could be attempted by using this technique to obtain sensitive data. However, there is no specific evidence of this being the case.\n\nConclusion: Overall, while there are no total IOCs or malicious IP addresses found in the report's data, there are not significant indications of a high-level threat such as widespread botnet activity or ransomware. The information collected suggests that this threat is low to medium risk and is unlikely to cause significant harm to the targeted organization.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}

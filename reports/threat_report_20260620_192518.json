@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-06-20T19:25:18.336698",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 47,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "The analysis shows that the identified threat is a high-impact attack vector with critical threat level. The first bullet point mentions that the threat level is \"critical\", while the second bullet point states that the threats found include malicious, IPs, domains, and hashes. All of these items are potential indicators of an imminent cyberattack. \n\nThe analysis also points out that the briefl summary mentions three main recovery actions that should be taken if the threat is detected and the necessary precautions should be taken to mitigate risks and minimize damage. This highlights the importance of taking proactive measures in case of an attack.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}
