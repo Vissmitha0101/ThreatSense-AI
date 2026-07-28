@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-20T19:47:55.965192",
   "source": "sample_alert",
@@ -75,4 +76,83 @@
   ],
   "ai_summary": "Response:\n1. Threat Level: Critical\nSummary: Attackers have exploited a critical vulnerability in the popular email security solution MailEnable, causing a backdoor to be created in the system. The attackers were able to access the victim's data through the backdoor. Recommendations: Users should implement strong and unique passwords and update their software regularly as patches are released by the vendor.\n\n2. Threat Level: High\nSummary: Attackers have attempted to exploit a high-severity vulnerability in the popular web application firewall (WAF) Akamai Antarctic, causing a potential security breach of the system. The attackers were able to gain access to the WAF's administrative panel. Recommendations: Users should regularly update their WAF software to mitigate this issue and implement strong security measures to prevent similar attacks in the future.\n\n3. Threat Level: Medium\nSummary: Attackers have exploited a medium-severity vulnerability in popular email security solution Zimbra, resulting in unauthorized access of sensitive data. Recommendations: Users should regularly patch their software and implement strong encryption and authentication measures to prevent similar attacks.\n\n4. Malicious: 0\nSummary: No malicious activity has been detected during this analysis.\n\n5. IPs: 1\nSummary: No IPs have been detected.\n\n6. Domains: 2\nSummary: No domains have been detected.\n\n7. Hashes: 1\nSummary: No hashes have been identified.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-20T19:47:55.965192",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Response:\n1. Threat Level: Critical\nSummary: Attackers have exploited a critical vulnerability in the popular email security solution MailEnable, causing a backdoor to be created in the system. The attackers were able to access the victim's data through the backdoor. Recommendations: Users should implement strong and unique passwords and update their software regularly as patches are released by the vendor.\n\n2. Threat Level: High\nSummary: Attackers have attempted to exploit a high-severity vulnerability in the popular web application firewall (WAF) Akamai Antarctic, causing a potential security breach of the system. The attackers were able to gain access to the WAF's administrative panel. Recommendations: Users should regularly update their WAF software to mitigate this issue and implement strong security measures to prevent similar attacks in the future.\n\n3. Threat Level: Medium\nSummary: Attackers have exploited a medium-severity vulnerability in popular email security solution Zimbra, resulting in unauthorized access of sensitive data. Recommendations: Users should regularly patch their software and implement strong encryption and authentication measures to prevent similar attacks.\n\n4. Malicious: 0\nSummary: No malicious activity has been detected during this analysis.\n\n5. IPs: 1\nSummary: No IPs have been detected.\n\n6. Domains: 2\nSummary: No domains have been detected.\n\n7. Hashes: 1\nSummary: No hashes have been identified.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

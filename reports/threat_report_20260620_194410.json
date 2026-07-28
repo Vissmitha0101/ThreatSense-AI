@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-20T19:44:10.475748",
   "source": "sample_alert",
@@ -77,4 +78,85 @@
   ],
   "ai_summary": "Analysis:\n\nTotal IOCs: 4 (HIGH risk)\nMalicious: 0 (LOW risk)\nIPs: 1 (HIGH risk)\nDomain(s): 2 (MEDIUM risk)\nHashes: 1 (MEDIUM risk)\n\nThreat level: HIGH risk (major threat)\nRecommendations: - Do not click on links or download files from unknown sources, especially if they come from an untrusted source.\n- Update antivirus and security software regularly to protect against new threats.\n- Be cautious of phishing emails and suspicious links, as they may be used for malicious purposes.\n- Keep your operating system and applications updated with the latest patches and security updates.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-20T19:44:10.475748",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "evil-domain.xyz",
+      "google-secure-login.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Analysis:\n\nTotal IOCs: 4 (HIGH risk)\nMalicious: 0 (LOW risk)\nIPs: 1 (HIGH risk)\nDomain(s): 2 (MEDIUM risk)\nHashes: 1 (MEDIUM risk)\n\nThreat level: HIGH risk (major threat)\nRecommendations: - Do not click on links or download files from unknown sources, especially if they come from an untrusted source.\n- Update antivirus and security software regularly to protect against new threats.\n- Be cautious of phishing emails and suspicious links, as they may be used for malicious purposes.\n- Keep your operating system and applications updated with the latest patches and security updates.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

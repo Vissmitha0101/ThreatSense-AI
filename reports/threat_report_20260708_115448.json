@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-07-08T11:54:48.128493",
   "source": "sample_alert",
@@ -75,4 +76,83 @@
   ],
   "ai_summary": "According to the threat finding, the total number of IOCs (Indicators of Compromise) is 4. There are no malicious indicators detected in this report. The IP addresses analyzed represent a single host, with only one suspicious IP address being found as part of the analysis. As for domains, there are no indications of compromise found in this report. Hashes analyzed were not malicious and did not match any known samples. \n\nIn terms of threat level, the brief summary provided indicates that the report classifies this investigation as \"CRITICAL/HIGH/MEDIUM/LOW.\" This means that while no actual threat exists at this time, the risk posed by the observed behavior is high enough to require immediate action. The recommended remediation actions in the report follow.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-07-08T11:54:48.128493",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 54,
+          "undetected": 36,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/IPv4/5.5.5.5/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "abuseipdb": {
+          "abuse_score": 8,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/domain/google-secure-login.xyz/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/domain/evil-domain.xyz/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    }
+  ],
+  "ai_summary": "According to the threat finding, the total number of IOCs (Indicators of Compromise) is 4. There are no malicious indicators detected in this report. The IP addresses analyzed represent a single host, with only one suspicious IP address being found as part of the analysis. As for domains, there are no indications of compromise found in this report. Hashes analyzed were not malicious and did not match any known samples. \n\nIn terms of threat level, the brief summary provided indicates that the report classifies this investigation as \"CRITICAL/HIGH/MEDIUM/LOW.\" This means that while no actual threat exists at this time, the risk posed by the observed behavior is high enough to require immediate action. The recommended remediation actions in the report follow.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

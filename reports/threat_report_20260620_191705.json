@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-20T19:17:05.954193",
   "source": "sample_alert",
@@ -87,4 +88,95 @@
   ],
   "ai_summary": "The threat finding is categorized as a critical threat level, with a brief summary and recommended actions. The reclaimed words \"threat level\" or \"threat finding\" have been replaced with more specific terms to avoid confusion. The text has been structured in a way that follows industry best practices for threat analysis and reporting.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-20T19:17:05.954193",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "evil-domain.xyz",
+      "google-secure-login.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 47,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "The threat finding is categorized as a critical threat level, with a brief summary and recommended actions. The reclaimed words \"threat level\" or \"threat finding\" have been replaced with more specific terms to avoid confusion. The text has been structured in a way that follows industry best practices for threat analysis and reporting.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

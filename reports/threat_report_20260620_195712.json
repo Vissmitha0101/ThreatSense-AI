@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-20T19:57:12.655337",
   "source": "sample_alert",
@@ -75,4 +76,83 @@
   ],
   "ai_summary": "Here is a revised analysis based on the original threat finding:\n\nTotal IOCs: 4\nMalicious: 0\nIPs: 1\nDomains: 2\nHashes: 1\n\nThreat Level: HIGH (note that there is no other type of level)\nBrief Summary: An advanced threat actor has been observed using a sophisticated attack technique, targeting multiple companies with malware and data exfiltration. The actor has also been observed committing DDoS attacks against their targets and stealing intellectual property. Reccomended actions include implementing advanced security measures to detect and prevent similar attacks in the future.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-20T19:57:12.655337",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Here is a revised analysis based on the original threat finding:\n\nTotal IOCs: 4\nMalicious: 0\nIPs: 1\nDomains: 2\nHashes: 1\n\nThreat Level: HIGH (note that there is no other type of level)\nBrief Summary: An advanced threat actor has been observed using a sophisticated attack technique, targeting multiple companies with malware and data exfiltration. The actor has also been observed committing DDoS attacks against their targets and stealing intellectual property. Reccomended actions include implementing advanced security measures to detect and prevent similar attacks in the future.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

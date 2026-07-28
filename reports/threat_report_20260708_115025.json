@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-07-08T11:50:25.839475",
   "source": "sample_alert",
@@ -66,4 +67,74 @@
   ],
   "ai_summary": "Based on the analysis of the threat finding, we can conclude that the total number of IOCs is 4, which falls under the category \"critical\". The malicious and IPs found in the report indicate a high or medium threat level. In terms of identifying and stopping potential threats, these findings suggest that the reported IP addresses are associated with a domain called \"example.com\". This finding is classified as a low threat level. As for our recommendations, we suggest the following:\n\n- For the malicious IOCs, we would recommend blocking or quarantining any malicious activities that may pose a threat to the organization. We would also implement advanced threat protection measures such as anti-malware and antivirus software.\n- The identified IP addresses are associated with a domain called \"example.com\", which is considered high threat level. As such, we would recommend blocking or quarantining any suspicious activity or attempted exploitation of this domain by unauthorized personnel. We would also implement security measures such as firewalls and intrusion detection systems.\n- For the remaining IOCs, we would recommend analyzing each one thoroughly for indicators of compromise (IOCI) to identify any attempts made at gaining access or modifying sensitive data in your environment. This analysis can help pinpoint potential threats that may pose a threat to your organization. We would also consider implementing security policies and best practices recommended by industry experts.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-07-08T11:50:25.839475",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/ip_addresses/5.5.5.5 (Caused by NameResolutionError(\"HTTPSConnection(host='www.virustotal.com', port=443): Failed to resolve 'www.virustotal.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/IPv4/5.5.5.5/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "abuseipdb": {
+          "abuse_score": 8,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/domains/google-secure-login.xyz (Caused by NameResolutionError(\"HTTPSConnection(host='www.virustotal.com', port=443): Failed to resolve 'www.virustotal.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/domains/evil-domain.xyz (Caused by NameResolutionError(\"HTTPSConnection(host='www.virustotal.com', port=443): Failed to resolve 'www.virustotal.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Based on the analysis of the threat finding, we can conclude that the total number of IOCs is 4, which falls under the category \"critical\". The malicious and IPs found in the report indicate a high or medium threat level. In terms of identifying and stopping potential threats, these findings suggest that the reported IP addresses are associated with a domain called \"example.com\". This finding is classified as a low threat level. As for our recommendations, we suggest the following:\n\n- For the malicious IOCs, we would recommend blocking or quarantining any malicious activities that may pose a threat to the organization. We would also implement advanced threat protection measures such as anti-malware and antivirus software.\n- The identified IP addresses are associated with a domain called \"example.com\", which is considered high threat level. As such, we would recommend blocking or quarantining any suspicious activity or attempted exploitation of this domain by unauthorized personnel. We would also implement security measures such as firewalls and intrusion detection systems.\n- For the remaining IOCs, we would recommend analyzing each one thoroughly for indicators of compromise (IOCI) to identify any attempts made at gaining access or modifying sensitive data in your environment. This analysis can help pinpoint potential threats that may pose a threat to your organization. We would also consider implementing security policies and best practices recommended by industry experts.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-20T19:12:16.458484",
   "source": "sample_alert",
@@ -59,4 +60,67 @@
   ],
   "ai_summary": "Analysis:\n\n1. Total IOCs: 4 - This indicates that the threat is considered critical or high in severity by security researchers. It means that the attacker has a strong motivation and a significant number of malicious resources to carry out their attacks effectively.\n\n2. Malicious: 0 - The report identifies no malicious URLs, files, emails, or other malicious threats found during the initial threat analysis.\n\n3. IPs: 1 - This indicates that the threat is believed to be focused on a specific network of IP addresses, which can help in prioritizing security measures and responding to it accordingly.\n\n4. Domain(s): 2 - The report identifies two domains (one malicious and one benign) used by the attacker for launching attacks. This suggests that they may be actively engaged in targeted attacks against specific targets or industries.\n\n5. Hashes: 1 - There are no verified hashes found during the initial threat analysis, indicating that the threat is likely to be an early version of the malware that has not yet been fully tested and refined for more sophisticated attacks.\n\nOverall, this report indicates that the threat posed by the attacker is considered critical or high in severity, with a strong motivation and a significant number of malicious resources identified during initial threat analysis. The IPs, domains, and hashes are still unknown, indicating that further investigation is required to better understand the scope and nature of the attacker's activities.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-20T19:12:16.458484",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        },
+        "abuseipdb": {
+          "error": "AbuseIPDB API key not configured"
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "VirusTotal API key not configured"
+        },
+        "otx": {
+          "error": "OTX API key not configured"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Analysis:\n\n1. Total IOCs: 4 - This indicates that the threat is considered critical or high in severity by security researchers. It means that the attacker has a strong motivation and a significant number of malicious resources to carry out their attacks effectively.\n\n2. Malicious: 0 - The report identifies no malicious URLs, files, emails, or other malicious threats found during the initial threat analysis.\n\n3. IPs: 1 - This indicates that the threat is believed to be focused on a specific network of IP addresses, which can help in prioritizing security measures and responding to it accordingly.\n\n4. Domain(s): 2 - The report identifies two domains (one malicious and one benign) used by the attacker for launching attacks. This suggests that they may be actively engaged in targeted attacks against specific targets or industries.\n\n5. Hashes: 1 - There are no verified hashes found during the initial threat analysis, indicating that the threat is likely to be an early version of the malware that has not yet been fully tested and refined for more sophisticated attacks.\n\nOverall, this report indicates that the threat posed by the attacker is considered critical or high in severity, with a strong motivation and a significant number of malicious resources identified during initial threat analysis. The IPs, domains, and hashes are still unknown, indicating that further investigation is required to better understand the scope and nature of the attacker's activities.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

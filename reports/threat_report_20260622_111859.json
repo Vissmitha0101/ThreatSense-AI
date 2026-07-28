@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-06-22T11:18:59.114042",
   "source": "sample_alert",
@@ -63,4 +64,71 @@
   ],
   "ai_summary": "Response:\n1. Total IOCs: 4\n- This indicates that the threat actor has identified and removed a total of 4 unique malicious IP addresses from their network. This is considered a high level threat.\n2. Malicious: 0\n- The threat actor has not been found to be involved in any malicious activities, indicating a low level of threat.\n3. IPs: 1\n- Only one IP address (192.168.10.1) is identified in the threat finding. This suggests that this threat actor has limited access to their network and does not pose an imminent threat.\n4. Domain(s): 2\n- Two domains (example.com, www.example.com) are found but no evidence of any malicious activity is present. This indicates that the threat actor is using legitimate domain names for their operations, indicating a medium level of threat.\n5. Hashes: 1\n- Only one hash (4a3d7c6f0b8c21e9d86379a0349cf6d0) is identified in the threat finding. This suggests that this threat actor has limited access to their network and does not pose an imminent threat.\nThese findings demonstrate a high level of threat from the threat actor, indicating that they are likely to be involved in malicious activities.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-06-22T11:18:59.114042",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "evil-domain.xyz",
+      "google-secure-login.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/ip_addresses/5.5.5.5 (Caused by NameResolutionError(\"HTTPSConnection(host='www.virustotal.com', port=443): Failed to resolve 'www.virustotal.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/IPv4/5.5.5.5/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "abuseipdb": {
+          "error": "HTTPSConnectionPool(host='api.abuseipdb.com', port=443): Max retries exceeded with url: /api/v2/check?ipAddress=5.5.5.5&maxAgeInDays=90 (Caused by NameResolutionError(\"HTTPSConnection(host='api.abuseipdb.com', port=443): Failed to resolve 'api.abuseipdb.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/domains/evil-domain.xyz (Caused by NameResolutionError(\"HTTPSConnection(host='www.virustotal.com', port=443): Failed to resolve 'www.virustotal.com' ([Errno 11002] getaddrinfo failed)\"))"
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/domain/evil-domain.xyz/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Max retries exceeded with url: /api/v1/indicators/domain/google-secure-login.xyz/general (Caused by NameResolutionError(\"HTTPSConnection(host='otx.alienvault.com', port=443): Failed to resolve 'otx.alienvault.com' ([Errno 11002] getaddrinfo failed)\"))"
+        }
+      }
+    }
+  ],
+  "ai_summary": "Response:\n1. Total IOCs: 4\n- This indicates that the threat actor has identified and removed a total of 4 unique malicious IP addresses from their network. This is considered a high level threat.\n2. Malicious: 0\n- The threat actor has not been found to be involved in any malicious activities, indicating a low level of threat.\n3. IPs: 1\n- Only one IP address (192.168.10.1) is identified in the threat finding. This suggests that this threat actor has limited access to their network and does not pose an imminent threat.\n4. Domain(s): 2\n- Two domains (example.com, www.example.com) are found but no evidence of any malicious activity is present. This indicates that the threat actor is using legitimate domain names for their operations, indicating a medium level of threat.\n5. Hashes: 1\n- Only one hash (4a3d7c6f0b8c21e9d86379a0349cf6d0) is identified in the threat finding. This suggests that this threat actor has limited access to their network and does not pose an imminent threat.\nThese findings demonstrate a high level of threat from the threat actor, indicating that they are likely to be involved in malicious activities.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }

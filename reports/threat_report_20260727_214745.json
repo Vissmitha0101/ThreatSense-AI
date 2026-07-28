@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "timestamp": "2026-07-27T21:47:45.558660",
   "source": "sample_alert",
@@ -87,4 +88,95 @@
   ],
   "ai_summary": "Recommendations for mitigating the identified threat(s):\n\n1. Review and update security policies and procedures as needed to ensure compliance with relevant regulatory frameworks, industry standards, and best practices.\n2. Ensure that all devices and software are regularly updated with the latest patches or security patches, including any software or apps installed on the system.\n3. Implement multifactor authentication (MFA) for all logins, including user names and passwords, to enhance the level of access control and prevent unauthorized access.\n4. Conduct regular backups of critical data and systems to provide an effective fallback mechanism in case of a system failure or attack.\n5. Implement intrusion detection and prevention systems (IDS/IPS) to detect and respond quickly to potential threats, including malware infection, malicious insider actions, and network attacks.\n6. Employ strong passwords with unique, complex, and long-lasting password policies to protect sensitive data and ensure the security of all user accounts.\n7. Securely store confidential information such as financial records, intellectual property, or medical records using appropriate encryption protocols.\n8. Implement firewalls and content filters to block unapproved or suspicious traffic and prevent unauthorized access to critical systems or data.\n9. Implement anti-virus software and anti-malware protection to detect and remove malicious software from the system.\n10. Conduct regular vulnerability assessments and patch management to identify and address potential security threats and ensure ongoing system security.",
   "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+=======
+{
+  "timestamp": "2026-07-27T21:47:45.558660",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 1,
+          "suspicious": 0,
+          "harmless": 53,
+          "undetected": 37,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 48,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 12,
+          "total_reports": 3,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 54,
+          "undetected": 35,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Recommendations for mitigating the identified threat(s):\n\n1. Review and update security policies and procedures as needed to ensure compliance with relevant regulatory frameworks, industry standards, and best practices.\n2. Ensure that all devices and software are regularly updated with the latest patches or security patches, including any software or apps installed on the system.\n3. Implement multifactor authentication (MFA) for all logins, including user names and passwords, to enhance the level of access control and prevent unauthorized access.\n4. Conduct regular backups of critical data and systems to provide an effective fallback mechanism in case of a system failure or attack.\n5. Implement intrusion detection and prevention systems (IDS/IPS) to detect and respond quickly to potential threats, including malware infection, malicious insider actions, and network attacks.\n6. Employ strong passwords with unique, complex, and long-lasting password policies to protect sensitive data and ensure the security of all user accounts.\n7. Securely store confidential information such as financial records, intellectual property, or medical records using appropriate encryption protocols.\n8. Implement firewalls and content filters to block unapproved or suspicious traffic and prevent unauthorized access to critical systems or data.\n9. Implement anti-virus software and anti-malware protection to detect and remove malicious software from the system.\n10. Conduct regular vulnerability assessments and patch management to identify and address potential security threats and ensure ongoing system security.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+>>>>>>> 24067d2deca5ddb513a9d049d9d76680279797fb
 }
