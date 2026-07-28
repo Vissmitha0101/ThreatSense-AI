@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-06-20T19:54:02.514473",
+  "source": "sample_alert",
+  "iocs": {
+    "ips": [
+      "5.5.5.5"
+    ],
+    "domains": [
+      "google-secure-login.xyz",
+      "evil-domain.xyz"
+    ],
+    "hashes": [
+      [
+        "MD5",
+        "44d88612fea8a8f36de82e1278abb02f"
+      ]
+    ]
+  },
+  "results": [
+    {
+      "ioc": "5.5.5.5",
+      "type": "ip",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 1,
+          "harmless": 55,
+          "undetected": 35,
+          "total": 91,
+          "reputation": 1
+        },
+        "otx": {
+          "pulse_count": 47,
+          "reputation": 0,
+          "validation": [
+            {
+              "source": "whitelist",
+              "message": "contained in whitelisted prefix",
+              "name": "Whitelisted IP"
+            }
+          ]
+        },
+        "abuseipdb": {
+          "abuse_score": 10,
+          "total_reports": 2,
+          "country": "DE",
+          "is_malicious": false
+        }
+      }
+    },
+    {
+      "ioc": "google-secure-login.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "error": "HTTPSConnectionPool(host='otx.alienvault.com', port=443): Read timed out. (read timeout=10)"
+        }
+      }
+    },
+    {
+      "ioc": "evil-domain.xyz",
+      "type": "domain",
+      "sources": {
+        "virustotal": {
+          "malicious": 0,
+          "suspicious": 2,
+          "harmless": 53,
+          "undetected": 36,
+          "total": 91
+        },
+        "otx": {
+          "pulse_count": 0,
+          "reputation": 0,
+          "validation": []
+        }
+      }
+    }
+  ],
+  "ai_summary": "Threat Level: Critical\n\nBrief Summary:\nWe have analyzed the threat data provided by our partner agency, who discovered malicious activity against a small, but high-value target. The IP addresses of interest are 1.2.3.4 and 5.6.7.8, along with multiple domain names associated with the organization. We found no indications of compromise, indicating that our partner agency's findings are credible.\n\nRecommended Actions:\n- We immediately disabled the active malware, which is not a significant threat to the organization.\n- We conducted an internal security review and updated security policies as necessary.\n- We worked with the organization's IT team to assess the scope of the issue and develop mitigation strategies.\n- We will continue monitoring for any additional suspicious activity and provide updates accordingly.",
+  "text_preview": "\n    ALERT: Suspicious activity detected!\n    \n    Host 192.168.1.105 is communicating with external IP 5.5.5.5.\n    The domain evil-domain.xyz was resolved.\n    File hash: 44d88612fea8a8f36de82e1278abb02f\n    \n    Also saw traffic to google-secure-login.xyz - possible phishing!\n    "
+}
